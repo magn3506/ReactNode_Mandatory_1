@@ -11,7 +11,6 @@ const getTodoes = (req, res) => {
         // SEND RESPONSE
         res.send(todoes);
 
-
     });
 
 };

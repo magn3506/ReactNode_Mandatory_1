@@ -10,7 +10,7 @@ const updateTodo = (req, res) => {
         // CONVERT DATA TO JSON
         let jData = JSON.parse(sData);
 
-        // TJEK I ID EXISTS IN DB - IF NOT EXIT SCRIPT
+        // TJEK I ID EXISTS IN DB - IF NOT? EXIT SCRIPT - STATUS 400
         const isMatch = jData.todoes.find(todo => todo.id === req.params.id);
         if (!isMatch) {
             return res.status(400).send({ msg: "ERROR" })
@@ -29,6 +29,7 @@ const updateTodo = (req, res) => {
         // WRITE BACK TO DB (JSON FILE)
         fs.writeFileSync(__dirname + "/../../db/data.json", sData);
 
+        // RESPONSE
         res.status(200).send({ msg: "data was updated" })
 
     });

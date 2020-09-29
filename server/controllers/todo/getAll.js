@@ -10,7 +10,6 @@ const getTodoes = (req, res) => {
         let todoes = JSON.parse(data);
         // SEND RESPONSE
         res.send(todoes);
-
     });
 
 };

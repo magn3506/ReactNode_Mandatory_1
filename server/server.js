@@ -2,12 +2,14 @@
 
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const PORT = process.env.PORT || 9000;
 
 // REQUIRE ROUTES
 const todo = require("./routes/todo/todo");
 
 // MIDDLEWARE
+// app.use(cors());
 app.use(express.urlencoded({ extended: true })); // ??
 app.use(express.json()); // ??
 

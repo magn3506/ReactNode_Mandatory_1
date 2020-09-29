@@ -1,0 +1,27 @@
+{
+  "name": "mandatory_1",
+  "version": "1.0.0",
+  "description": "This is a school project Mandatory 1 for the React &amp; Node.js elective.",
+  "main": "index.js",
+  "scripts": {
+    "server-dev": "nodemon server/server.js",
+    "server-prod": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magn3506/ReactNode_Mandatory_1.git"
+  },
+  "author": "Magnus Jensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magn3506/ReactNode_Mandatory_1/issues"
+  },
+  "homepage": "https://github.com/magn3506/ReactNode_Mandatory_1#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

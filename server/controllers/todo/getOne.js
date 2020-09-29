@@ -9,8 +9,9 @@ const getTodo = (req, res) => {
         // CONVERT DATA TO JSON
         let jData = JSON.parse(sData);
 
+
         // FIND SINGLE TODO OBJ FROM PARAM.ID
-        const jTodo = jData.todoes.find(todo => todo.id === Number(req.params.id));
+        const jTodo = jData.todoes.find(todo => todo.id === req.params.id);
 
         // RETURN SINGLE OBJ IF MATCH ELSE NO MATCH
         if (jTodo) { return res.send({ data: jTodo }) };

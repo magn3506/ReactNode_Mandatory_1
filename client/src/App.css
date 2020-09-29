@@ -1,3 +1,6 @@
+
 h1 {
-    color: chartreuse;
+    color: var(--main-bg-color);
+    font-family: var(--Baloo-Tam-3-Curs);
+    font-size: 2rem;
 }

@@ -9,8 +9,9 @@ import About from "./pages/about/About";
 import Layout from "./components/layout/layout";
 
 // MAIN STYLE
-
-import './Reset.css';
+import './styles/reset/Reset.css';
+import "./styles/colors/Colors.css";
+import "./styles/typography/Typography.css";
 import './App.css';
 
 class App extends Component {

@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true })); // ??
 app.use(express.json()); // ??
 
 
-// ROUTING
+// ROUTINGc
 app.use("/api/todo", todo);
 
 // ROOT INDEX

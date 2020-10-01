@@ -1,35 +1,39 @@
 import React, { Component } from 'react'
 
+// COMPONENTS
+import TODO_LIST from "../../components/todo_list/Todo_list";
+
+
 export class Home extends Component {
     constructor() {
         super();
         this.state = {
-            todoes: []
+            todoes: [],
+            isLoading: true,
         }
+
     }
 
     componentDidMount() {
         fetch('http://localhost:9000/api/todo')
             .then(response => response.json())
-            .then(data => this.setState({ todoes: data.todoes }, console.log("fetched data...")));
+            .then(data => {
+                this.setState({
+                    todoes: data.todoes,
+                    isLoading: false
+                })
+            });
     }
-
-
 
     render() {
 
-        const listOfTodoes = this.state.todoes.map(todo => {
-            return <li key={todo.id}>{todo.todo}</li>
-        })
+        const { todoes, isLoading } = this.state;
+        const Todo_list = isLoading ? "Loading" : <TODO_LIST todoes={todoes} />
 
         return (
-            <>
-                <h1>MY APP</h1>
-                <h2>TODO LIST:</h2>
-                <ul>
-                    {listOfTodoes}
-                </ul>
-            </>
+            <ul>
+                {Todo_list}
+            </ul>
         );
     }
 

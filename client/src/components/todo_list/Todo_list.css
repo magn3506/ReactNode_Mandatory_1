@@ -1,0 +1,147 @@
+
+/* TODO LIST HEADER */
+
+.todo_list_header_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+.Todo_list_title{
+    color: var(--color-orange);
+    font-family: var(--Roboto);
+
+}
+.Todo_list_number{
+    color: var(--color-orange);
+    font-family: var(--Roboto);
+
+}
+
+
+/* TODO LIST  CONTAINER*/
+
+.todo_list_contianer{
+    width: 100%;
+    padding: 10px;
+}
+
+/* TODO LIST ITEMS */
+
+.todo_list_item{
+    width: 100%;
+    height: 50px;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    background-color: #322F38;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+
+
+.todo_list_icon_container{
+    width: 35px;
+    height: 35px;
+    border-radius: 1000px;
+    background-color: var(--color-purple);
+    display: flex;
+    padding: 5px;
+    padding-left: 6px;
+    margin-left: 8px;
+}
+.todo_list_icon{
+    color: var(--color-orange);
+    width: 25px;
+    height: 25px;
+}
+
+.task_text{
+
+    color: var( --color-white);
+    font-family: var(--Roboto);
+    font-weight: 500;
+    font-size: 12px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.list_item_btn{
+    margin-right: 10px;
+    position: relative;
+}
+
+.list_item_btn_icon{
+    color: var(--color-orange);
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.list_item_btn_icon:hover {
+    color: var(--color-sand);
+    cursor: pointer;
+}
+
+/* OPTIONS*/
+
+.list_item_options_container{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-color: var(--color-dark-purple);
+    display: none;
+    top: -8px;
+    left: -60px;
+    border-radius: 1000px;
+    overflow: hidden;
+    align-items: middle;
+
+    /*MUST DISPLAY FLEX WHEN SHOWN*/
+    display: flex; 
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 1);
+
+}
+.edit_icon_container{
+    width: 100%;
+    background-color: var(--color-purple);
+    border-radius: 1000px 0px 0px 1000px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+}
+.edit_icon{
+
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    color: var(--color-sand);
+    margin-top: -2px;
+}
+
+.edit_icon:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.delete_icon_container{
+    width: 100%;
+    background-color: var(--color-medium-purple);
+    border-radius: 0px 1000px 1000px 0px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.delete_icon{
+    width: 25px;
+    height: 25px;
+    margin-left: 9px;
+    margin-top: -2px;
+    color: var(--color-orange);
+}
+.delete_icon:hover {
+    cursor: pointer;
+    color: white;
+}

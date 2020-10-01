@@ -10,7 +10,8 @@
     background-color: var(--color-dark-purple);
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25); 
-    overflow-x: scroll;   
+    overflow: hidden;   
+
 }
 
 .center_middle {
@@ -29,12 +30,38 @@
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
 }
 
 .logo_container{
-    width: 110px;
+    width: 120px;
+    vertical-align: middle;
 }
-
+.nav{
+}
 .logo {
     width: 100%;
+    vertical-align: middle;
+
+}
+
+.nav_btn{
+    width: 35px;
+    height: 35px;
+    color: var(--color-orange);
+    top: 5px;
+}
+
+.nav_btn:hover {
+    cursor: pointer;
+    color: var(--color-sand);
+}
+
+.main{
+    top: 50px;
+    position: relative;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    overflow-x: scroll;
 }

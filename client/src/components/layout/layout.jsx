@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+// RACT ICONS
+import { CgMenuRight } from "react-icons/cg"
 
 // ASSETS
-import Logo from "../../assets/images/TodHooLogo.png";
+import Logo from "../../assets/images/TodHooLogo.svg";
 
 // STYLE
 import "./layout.css";
@@ -18,16 +21,14 @@ export class Layout extends Component {
                             <img className="logo" src={Logo} alt="logo" />
                         </div>
                         <nav className="nav">
-                            _
-                            -
-                            -
-                        {/* <ul>
+                            <CgMenuRight className="nav_btn" />
+                            {/* <ul>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
                         </ul> */}
                         </nav>
                     </header>
-                    <main>
+                    <main className="main">
                         {this.props.children}
                     </main>
                     {/* <footer>

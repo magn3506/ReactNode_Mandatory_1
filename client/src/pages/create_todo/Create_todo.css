@@ -1,0 +1,92 @@
+
+/* FORM */
+.create_todo_form{
+    padding: 30px 10px;
+}
+.create_todo_task_label{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
+    color: var(--color-orange);
+    font-family: var(--Heebo);
+}
+.create_todo_tasl_input{
+    margin-top: 20px;
+    background: #FFFFFF;
+    box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    height: 40px;
+    padding-left: 15px;
+    outline: none;
+}
+
+/* CATEGORY */
+.catagory_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.create_category_icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.create_category_icon svg {
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+    background-color: var(--color-purple);
+    padding: 10px;
+    vertical-align: center;
+    color: var(--color-orange);
+}
+
+.category_title{
+    text-align: center;
+    font-family: var(--Roboto);
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-top: 10px;
+
+}
+.isSelected{
+    color: var(--color-orange);
+}
+
+.isSelected > svg{
+   color: var(--color-dark-purple);
+   background-color: var(--color-sand);
+}
+
+/* BUTTONS */
+.create_todo_btn_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+
+}
+.button{
+    padding: 10px 20px;
+    font-family: var(--Roboto);
+    font-size: 16px;
+    border-radius: 1000px;
+    max-width: 120px;
+    background-color: var(--color-sand);
+    color: var(--color-dark-purple);
+    text-decoration: none;
+    text-align: center;
+    margin: 10px auto;
+    outline: none;
+    cursor: pointer;
+
+}
+.create_todo_cancel_btn{
+    background-color: var(--color-orange);
+    color: white;
+}

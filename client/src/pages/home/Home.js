@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 
+// LAYOUT COMPONENT
+import Layout from "../../components/layout/layout";
+
 // COMPONENTS
 import TODO_LIST from "../../components/todo_list/Todo_list";
+import CREATE_BUTTON from "../../components/create_btn/Create_btn";
+
+
 
 
 export class Home extends Component {
@@ -31,9 +37,13 @@ export class Home extends Component {
         const Todo_list = isLoading ? "Loading" : <TODO_LIST todoes={todoes} />
 
         return (
-            <ul>
-                {Todo_list}
-            </ul>
+            <Layout logo nav >
+                <ul>
+                    {Todo_list}
+                </ul>
+                <CREATE_BUTTON />
+            </Layout>
+
         );
     }
 

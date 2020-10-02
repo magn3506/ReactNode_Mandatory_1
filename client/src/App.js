@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 // PAGES
-import Home from "./pages/home/Home";
-import About from "./pages/about/About";
-
-// LAYOUT COMPONENT
-import Layout from "./components/layout/layout";
+import HOME from "./pages/home/Home";
+import ABOUT from "./pages/about/About";
+import CREATE_PAGE from "./pages/create_todo/Create_todo";
 
 // MAIN STYLE
 import './styles/reset/Reset.css';
@@ -19,12 +17,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Layout>
-          <Switch>
-            <Route path="/About" component={About} />
-            <Route path="/" component={Home} />
-          </Switch>
-        </Layout>
+        <Switch>
+          <Route path="/About" component={ABOUT} />
+          <Route path="/CreateTodo" component={CREATE_PAGE} />
+          <Route path="/" component={HOME} />
+        </Switch>
       </Router>
     );
   }

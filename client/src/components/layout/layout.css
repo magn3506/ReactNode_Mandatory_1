@@ -37,6 +37,17 @@
     width: 120px;
     vertical-align: middle;
 }
+
+.site_title{
+    vertical-align: middle;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    font-family: var(--Heebo);
+    color: var(--color-orange);
+}
+
 .nav{
 }
 .logo {

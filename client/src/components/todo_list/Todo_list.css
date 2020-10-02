@@ -145,3 +145,13 @@
     cursor: pointer;
     color: white;
 }
+
+
+
+
+/*SPACER*/
+
+.todo_list_spacer{
+    width: 100%;
+    height: 150px;
+}

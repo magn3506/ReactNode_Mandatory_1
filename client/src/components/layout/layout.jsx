@@ -17,16 +17,15 @@ export class Layout extends Component {
             <div className="site">
                 <div className="app_continer center_middle">
                     <header className="header">
-                        <div className="logo_container">
+                        {this.props.logo && <div className="logo_container">
                             <img className="logo" src={Logo} alt="logo" />
-                        </div>
-                        <nav className="nav">
+                        </div>}
+                        {
+                            this.props.title && <div className="site_title">{this.props.title}</div>
+                        }
+                        {this.props.nav && <nav className="nav">
                             <CgMenuRight className="nav_btn" />
-                            {/* <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                        </ul> */}
-                        </nav>
+                        </nav>}
                     </header>
                     <main className="main">
                         {this.props.children}

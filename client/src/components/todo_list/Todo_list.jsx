@@ -52,7 +52,7 @@ export class Todo_list extends Component {
                 <ul className="todo_list_contianer">
                     {todo_list_items}
                 </ul>
-
+                <div className="todo_list_spacer"></div>
                 {this.state.isDeleteWarningShowing && <DELETE_WARNING onCancelDeleteWarning={this.handleCancelDeleteWarning} onDeleteTodo={this.handeDeleteTodo} todo={this.state.deleteWarningTargetTodoObj} />}
             </>
         )

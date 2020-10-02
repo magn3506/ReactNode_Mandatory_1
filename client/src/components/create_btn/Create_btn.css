@@ -1,0 +1,33 @@
+.craete_btn_bg_overlay{
+    width: 100%;
+    position: fixed;
+    bottom: -5px;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+}
+.create_todo_btn{
+    align-self: middle;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-sand);
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    
+}
+.create_todo_btn_icon{
+    width: 55px;
+    height: 55px;
+    align-self: middle;
+    color: var(--color-dark-purple);
+    margin-left: 2.5px;
+    margin-top: 1px;
+}
+.create_todo_btn_icon:hover{
+    color: var(--color-medium-purple);
+}

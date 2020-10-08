@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import HOME from "./pages/home/Home";
 import ABOUT from "./pages/about/About";
 import CREATE_PAGE from "./pages/create_todo/Create_todo";
+import UPDATE_PAGE from "./pages/update_todo/Update_todo";
 
 // MAIN STYLE
 import './styles/reset/Reset.css';
@@ -20,6 +21,7 @@ class App extends Component {
         <Switch>
           <Route path="/About" component={ABOUT} />
           <Route path="/CreateTodo" component={CREATE_PAGE} />
+          <Route path="/UpdateTodo/:id" component={UPDATE_PAGE} />
           <Route path="/" component={HOME} />
         </Switch>
       </Router>

@@ -2,14 +2,22 @@
 
 const express = require("express");
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 const PORT = process.env.PORT || 9000;
 
 // REQUIRE ROUTES
 const todo = require("./routes/todo/todo");
 
 // MIDDLEWARE
-app.use(cors()); // ALLOW CORS FROM ALL *
+// app.use(cors()); // ALLOW CORS FROM ALL *
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'PATCH, POST, GET, DELETE');
+    next();
+});
+
 app.use(express.urlencoded({ extended: true })); // ??
 app.use(express.json()); // ??
 

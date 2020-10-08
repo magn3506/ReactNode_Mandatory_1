@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import fetchPost from "../../functions/fetchPost";
 
 // CSS
-import "./Create_todo.css";
+import "../create_todo/Create_todo.css";
 
 // IMPORT ICONS
 import { FaBusinessTime } from "react-icons/fa";
@@ -51,12 +51,31 @@ export class Create_todo extends Component {
         super();
         this.state = {
             todo: {
-                todo: undefined,
-                icon: undefined
-            }
+                todo: '',
+                icon: ''
+            },
+            isLoading: true
         }
     }
 
+    componentDidMount() {
+
+        const { id } = this.props.match.params;
+        const targetID = id;
+
+
+        fetch(`http://localhost:9000/api/todo/${targetID}`)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    todo: {
+                        todo: data.data.todo,
+                        icon: data.data.icon
+                    },
+                    isLoading: false
+                })
+            });
+    }
 
     handleSelectCategory = (event, category) => {
         event.preventDefault();
@@ -119,7 +138,12 @@ export class Create_todo extends Component {
                 isVallid: true
             })
 
-            fetchPost("http://localhost:9000/api/todo", "POST", this.state.todo);
+            console.log("UPDATE")
+
+            const { id } = this.props.match.params;
+            const targetID = id;
+
+            fetchPost(`http://localhost:9000/api/todo/${targetID}`, "PATCH", this.state.todo);
             // REDIRECT
             this.props.history.push("/")
 
@@ -131,7 +155,11 @@ export class Create_todo extends Component {
 
     }
 
+
+
+
     render() {
+
 
         const category_icons = categoryArr.map((cat, index) => {
             return (
@@ -152,14 +180,15 @@ export class Create_todo extends Component {
 
         const ErrMsg = this.state.errMsg && this.state.errMsg;
 
+
         return (
-            <LAYOUT title="CREATE TODO">
+            <LAYOUT title="UPDATE TODO">
                 <div className="Error_Message">
                     {ErrMsg}
                 </div>
                 <form className="create_todo_form">
-                    <label className="create_todo_task_label" htmlFor="name">Write Your Task
-                    <input className="create_todo_tasl_input" placeholder="Write your todo here..." name="todo" type="text" onChange={(e) => this.handleTodoInputChange(e)} />
+                    <label className="create_todo_task_label" htmlFor="name"  >Write Your Task
+                    <input className="create_todo_tasl_input" placeholder="Write your todo here..." value={this.state.todo.todo} name="todo" type="text" onChange={(e) => this.handleTodoInputChange(e)} />
                     </label>
                     <hr />
                     <div className="catagory_title">{categoryTitle}</div>
@@ -171,7 +200,6 @@ export class Create_todo extends Component {
                         <button className="button" onClick={(e) => { this.handleSubmitForm(e) }}>CREATE</button>
                         <Link to="/" className="create_todo_cancel_btn button">CANCEL</Link>
                     </div>
-
                 </form>
             </LAYOUT>
         )

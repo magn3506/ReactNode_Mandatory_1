@@ -1,69 +1,149 @@
 {
-    "todoes": [
-        {
-            "id": "1",
-            "todo": "To something 1",
-            "icon": "some icon name"
-        },
-        {
-            "id": "2",
-            "todo": "Hello World",
-            "icon": "some icon"
-        },
-        {
-            "id": "3",
-            "todo": "Hello World",
-            "icon": "some icon"
-        },
-        {
-            "id": "b73745cf-7d92-4d38-8d2a-d6cc262997b5",
-            "todo": "ajenpkaencpknaepkcnaepknc",
-            "icon": "icon\n"
-        },
-        {
-            "id": "329b9d10-e387-4a44-be1a-e4a386de5d45",
-            "todo": "ajenpkaencpknaepkcnaepknc",
-            "icon": "icon\n"
-        },
-        {
-            "id": "a2a4326b-67ac-48fb-af3c-be6d889d21ba",
-            "todo": "ajenpkaencpknaepkcnaepknc",
-            "icon": "icon\n"
-        },
-        {
-            "id": "a91ab438-f818-4330-b04f-127103f88faf",
-            "todo": "ajenpkaencpknaepkcnaepknc",
-            "icon": "icon\n"
-        },
-        {
-            "id": "47be7eca-72ec-4572-a491-6184df284c7b",
-            "todo": "ajenpkaencpknaepkcnaepknc",
-            "icon": "icon\n"
-        },
-        {
-            "id": "044f1cff-ed20-4bc5-bc0f-03a1817c9e6a",
-            "todo": "ajenpkaencpknaepkcnaepknc",
-            "icon": "icon\n"
-        },
-        {
-            "id": "4d16a628-6f1f-458b-8e03-6052943d2c4e",
-            "todo": "dh",
-            "icon": "dhdh\n"
-        },
-        {
-            "id": "bd8c7ece-2629-459b-adae-dcb5088fade8",
-            "todo": "dh",
-            "icon": "dhdh\n"
-        },
-        {
-            "id": "34948f34-579e-46f4-981f-56b5fcce996b",
-            "todo": "dh",
-            "icon": "dhdh\n"
-        },
-        {
-            "id": "3b58eefc-3d47-47af-98fe-5a3a89965a41",
-            "todo": "dh",
-            "icon": "dhdh\n"
-        }
-    ]
+ "todoes": [
+  {
+   "id": "1",
+   "todo": "To something 1",
+   "icon": "some icon name"
+  },
+  {
+   "id": "2",
+   "todo": "Hello World",
+   "icon": "some icon"
+  },
+  {
+   "id": "3",
+   "todo": "Hello World",
+   "icon": "some icon"
+  },
+  {
+   "id": "b73745cf-7d92-4d38-8d2a-d6cc262997b5",
+   "todo": "ajenpkaencpknaepkcnaepknc",
+   "icon": "icon\n"
+  },
+  {
+   "id": "329b9d10-e387-4a44-be1a-e4a386de5d45",
+   "todo": "ajenpkaencpknaepkcnaepknc",
+   "icon": "icon\n"
+  },
+  {
+   "id": "a2a4326b-67ac-48fb-af3c-be6d889d21ba",
+   "todo": "ajenpkaencpknaepkcnaepknc",
+   "icon": "icon\n"
+  },
+  {
+   "id": "a91ab438-f818-4330-b04f-127103f88faf",
+   "todo": "ajenpkaencpknaepkcnaepknc",
+   "icon": "icon\n"
+  },
+  {
+   "id": "47be7eca-72ec-4572-a491-6184df284c7b",
+   "todo": "ajenpkaencpknaepkcnaepknc",
+   "icon": "icon\n"
+  },
+  {
+   "id": "044f1cff-ed20-4bc5-bc0f-03a1817c9e6a",
+   "todo": "ajenpkaencpknaepkcnaepknc",
+   "icon": "icon\n"
+  },
+  {
+   "id": "4d16a628-6f1f-458b-8e03-6052943d2c4e",
+   "todo": "dh",
+   "icon": "dhdh\n"
+  },
+  {
+   "id": "bd8c7ece-2629-459b-adae-dcb5088fade8",
+   "todo": "dh",
+   "icon": "dhdh\n"
+  },
+  {
+   "id": "34948f34-579e-46f4-981f-56b5fcce996b",
+   "todo": "dh",
+   "icon": "dhdh\n"
+  },
+  {
+   "id": "3b58eefc-3d47-47af-98fe-5a3a89965a41",
+   "todo": "dh",
+   "icon": "dhdh\n"
+  },
+  {
+   "id": "4e31a5d0-411c-4653-92a6-91bc8ffe8720",
+   "todo": "some todo",
+   "icon": "some icon"
+  },
+  {
+   "id": "3f057349-769d-4e67-bb80-bb262f92a5e4",
+   "todo": "okje",
+   "icon": "oke"
+  },
+  {
+   "id": "ca10ef35-4c86-4148-b8a0-8afddb3cbd89",
+   "todo": "test",
+   "icon": "school"
+  },
+  {
+   "id": "a380a742-59d9-4847-a334-9a7b277180b3",
+   "todo": "test test",
+   "icon": "home"
+  },
+  {
+   "id": "013b3dcf-6c2f-4b74-a62d-93444c82c00e",
+   "todo": "awf",
+   "icon": "home"
+  },
+  {
+   "id": "a4c9b9d5-6195-448b-8444-deecc1a87533",
+   "todo": "awfawff",
+   "icon": "home"
+  },
+  {
+   "id": "43a5a5a6-9974-4a0a-8745-39ec5ca3a49b",
+   "todo": "qwr",
+   "icon": "home"
+  },
+  {
+   "id": "8fd64d32-b529-4576-aa62-48979a4b9c01",
+   "todo": "wf",
+   "icon": "home"
+  },
+  {
+   "id": "98e680f9-7be6-4294-9443-451395ece64e",
+   "todo": "awf",
+   "icon": "vacation"
+  },
+  {
+   "id": "990d4246-3b33-4d47-9a97-ed3575f72db0",
+   "todo": "awfawff",
+   "icon": "vacation"
+  },
+  {
+   "id": "10fd59ca-7423-45e5-9295-66032b96b3e3",
+   "todo": "awfawf",
+   "icon": "home"
+  },
+  {
+   "id": "3228187c-20c5-4cd0-b393-9206c62bf318",
+   "todo": "awfawf",
+   "icon": "home"
+  },
+  {
+   "id": "c235db12-fd28-4637-a8bb-fb106cc2d1e0",
+   "todo": "QWFQWF",
+   "icon": "home"
+  },
+  {
+   "id": "4ed55a23-743f-4ee7-8d9a-257e6da57ce6",
+   "todo": "HEJ HAJ",
+   "icon": "shopping"
+  },
+  {
+   "id": "be0d2636-1e6c-44bc-a4dc-2abf1cebad5b",
+   "todo": "aefaef",
+   "icon": "home"
+  },
+  {
+   "id": "4d3c7561-df5c-4d2c-ae8a-57d879d1627b",
+   "todo": "awfawff",
+   "icon": "home"
+  }
+ ]
 }

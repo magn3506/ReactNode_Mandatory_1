@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 9000;
 const todo = require("./routes/todo/todo");
 
 // MIDDLEWARE
-// app.use(cors());
+app.use(cors()); // ALLOW CORS FROM ALL *
 app.use(express.urlencoded({ extended: true })); // ??
 app.use(express.json()); // ??
 

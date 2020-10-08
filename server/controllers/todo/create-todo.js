@@ -10,7 +10,9 @@ const createTodo = (req, res) => {
 
     // EXIT SCRIPT IF BODY IS EMPTY
     if (isEmpty) {
-        return res.status(400).send({ msg: "Body is empty" });
+        return res.status(400).send({
+            msg: "Body is empty",
+        });
     }
 
     // READ DB FILE
@@ -36,7 +38,8 @@ const createTodo = (req, res) => {
         // WRITE BACK TO DB (JSON FILE)
         fs.writeFileSync(__dirname + "/../../db/data.json", sData);
         // SEND RESPONSE
-        res.status(200).send({ msg: "Todo Was created" });
+
+        return res.status(200).send({ msg: "Todo Was created", status: 200 });
 
     });
 }

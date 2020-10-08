@@ -1,7 +1,9 @@
 
 /* FORM */
 .create_todo_form{
-    padding: 30px 10px;
+    margin-top: -10px;
+    padding: 0px 10px;
+
 }
 .create_todo_task_label{
     display: flex;
@@ -22,6 +24,16 @@
 }
 
 /* CATEGORY */
+
+.catagory_title{
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
+    color: var(--color-orange);
+    font-family: var(--Heebo);
+    text-transform: capitalize;
+}
+
 .catagory_container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -89,4 +101,16 @@
 .create_todo_cancel_btn{
     background-color: var(--color-orange);
     color: white;
+}
+
+
+.Error_Message{
+    border-radius: 100px;
+    color: red;
+    padding: 5px 20px;
+
+    text-align: center;
+    margin: 20px auto;
+    font-family: var(--Roboto);
+    font-size: 14px;
 }

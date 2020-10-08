@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import LAYOUT from "../../components/layout/layout";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+
+import fetchPost from "../../functions/fetchPost";
 
 // CSS
 import "./Create_todo.css";
@@ -59,8 +61,11 @@ export class Create_todo extends Component {
         event.preventDefault();
         this.setState({
             todo: {
+                todo: this.state.todo.todo,
                 icon: category
-            }
+            },
+            errMsg: undefined,
+            isVallid: false
         })
 
     }
@@ -69,10 +74,62 @@ export class Create_todo extends Component {
         event.preventDefault()
         this.setState({
             todo: {
-                todo: event.target.value
+                todo: event.target.value,
+                icon: this.state.todo.icon
             }
         })
     }
+
+    handleValidationError = () => {
+
+        const { todo, icon } = this.state.todo;
+
+        if (!icon && !todo) {
+            this.setState({
+                errMsg: "Please write a todo and choose a category"
+            })
+            return;
+        }
+
+        if (!todo) {
+            this.setState({
+                errMsg: "Please write a todo"
+            })
+            return;
+        }
+
+        if (!icon) {
+            this.setState({
+                errMsg: "Please choose a category"
+            })
+            return;
+        }
+    }
+
+    handleSubmitForm = (event) => {
+        event.preventDefault();
+        console.log(this.state.todo);
+
+        const { todo, icon } = this.state.todo;
+
+        if (todo !== undefined && icon !== undefined) {
+            console.log("CREATE TODO");
+            this.setState({
+                isVallid: true
+            })
+
+            fetchPost("http://localhost:9000/api/todo", "post", this.state.todo);
+            // REDIRECT
+            this.props.history.push("/")
+
+            return;
+        } else {
+
+            this.handleValidationError();
+        }
+
+    }
+
 
 
 
@@ -93,21 +150,28 @@ export class Create_todo extends Component {
         })
 
 
+        const categoryTitle = this.state.todo.icon ? this.state.todo.icon : "Choose a Category"
 
+
+        const ErrMsg = this.state.errMsg && this.state.errMsg;
 
         return (
             <LAYOUT title="CREATE TODO">
-                <form className="create_todo_form" action="">
+                <div className="Error_Message">
+                    {ErrMsg}
+                </div>
+                <form className="create_todo_form">
                     <label className="create_todo_task_label" htmlFor="name">Write Your Task
                     <input className="create_todo_tasl_input" placeholder="Write your todo here..." name="todo" type="text" onChange={(e) => this.handleTodoInputChange(e)} />
                     </label>
                     <hr />
+                    <div className="catagory_title">{categoryTitle}</div>
                     <div className="catagory_container">
                         {category_icons}
                     </div>
                     <hr />
                     <div className="create_todo_btn_container">
-                        <button className="button" type="submit">CREATE</button>
+                        <button className="button" onClick={(e) => { this.handleSubmitForm(e) }}>CREATE</button>
                         <Link to="/" className="create_todo_cancel_btn button">CANCEL</Link>
                     </div>
 

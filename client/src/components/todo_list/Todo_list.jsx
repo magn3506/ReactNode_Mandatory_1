@@ -35,6 +35,23 @@ export class Todo_list extends Component {
     handeDeleteTodo = (event, targetTodoId) => {
         event.preventDefault();
         console.log("DELETE FROM DB WITH ID:" + targetTodoId);
+
+        fetch(`http://localhost:9000/api/todo/${targetTodoId}`, {
+            method: "DELETE",
+        }).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+
+
+        });
+
+        // REDIRECT
+
+
+
+
+
     }
 
     render() {

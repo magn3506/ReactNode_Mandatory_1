@@ -29,12 +29,14 @@ export class Home extends Component {
                     isLoading: false
                 })
             });
+
+        console.log()
     }
 
     render() {
 
         const { todoes, isLoading } = this.state;
-        const Todo_list = isLoading ? "Loading" : <TODO_LIST todoes={todoes} />
+        const Todo_list = isLoading ? "Loading" : <TODO_LIST todoes={todoes} history={this.props.history} />
 
         return (
             <Layout logo nav >

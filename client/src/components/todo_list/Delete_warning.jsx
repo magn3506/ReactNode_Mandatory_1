@@ -5,6 +5,8 @@ import { ImWarning } from 'react-icons/im';
 import "./Delete_warning.css";
 
 export class Delete_warning extends Component {
+
+
     render() {
         return (
             <div className="warning_bg">

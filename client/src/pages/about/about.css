@@ -1,0 +1,21 @@
+
+
+.about_content{
+
+    color: whitesmoke;
+    
+}
+.about_content h1{
+    font-family: var(--Heebo);
+    font-size: 25px;
+    margin: 20px;
+    color: var(--color-orange);
+}
+.about_content p{
+    margin: 20px;
+    font-family: var(--Roboto);
+    line-height: 20px;
+}
+.about_content a {
+    color: var(--color-orange);
+}

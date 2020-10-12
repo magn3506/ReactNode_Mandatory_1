@@ -9,40 +9,7 @@ import fetchPost from "../../functions/fetchPost";
 import "../create_todo/Create_todo.css";
 
 // IMPORT ICONS
-import { FaBusinessTime } from "react-icons/fa";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdSchool } from "react-icons/md";
-import { AiTwotoneBank } from "react-icons/ai";
-import { IoIosAirplane } from "react-icons/io";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-
-const categoryArr = [
-    {
-        category: "job",
-        iconComponent: <FaBusinessTime />
-    },
-    {
-        category: "home",
-        iconComponent: <AiOutlineHome />
-    },
-    {
-        category: "school",
-        iconComponent: <MdSchool />
-    },
-    {
-        category: "economy",
-        iconComponent: <AiTwotoneBank />
-    },
-    {
-        category: "vacation",
-        iconComponent: <IoIosAirplane />
-    },
-    {
-        category: "shopping",
-        iconComponent: <AiOutlineShoppingCart />
-    }
-
-]
+import categoryArr from "../../assets/icons/icons_object";
 
 
 export class Create_todo extends Component {

@@ -40,20 +40,28 @@
 
 
 .todo_list_icon_container{
-    width: 35px;
+    width: 50px;
     height: 35px;
     border-radius: 1000px;
     background-color: var(--color-purple);
     display: flex;
-    padding: 5px;
-    padding-left: 6px;
     margin-left: 8px;
+    align-items: center;
 }
-.todo_list_icon{
+
+.todo_list_icon {
     color: var(--color-orange);
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+
 }
+
+.todo_list_icon svg{
+    width: inherit;
+    height: inherit;
+    padding: 3px;
+}   
 
 .task_text{
 

@@ -2,48 +2,14 @@ import React, { Component } from 'react';
 import LAYOUT from "../../components/layout/layout";
 import { Link } from "react-router-dom";
 
+// IMPORT ICONS
+import categoryArr from "../../assets/icons/icons_object";
+
 // FETCH
 import fetchPost from "../../functions/fetchPost";
 
 // CSS
 import "./Create_todo.css";
-
-// IMPORT ICONS
-import { FaBusinessTime } from "react-icons/fa";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdSchool } from "react-icons/md";
-import { AiTwotoneBank } from "react-icons/ai";
-import { IoIosAirplane } from "react-icons/io";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-
-const categoryArr = [
-    {
-        category: "job",
-        iconComponent: <FaBusinessTime />
-    },
-    {
-        category: "home",
-        iconComponent: <AiOutlineHome />
-    },
-    {
-        category: "school",
-        iconComponent: <MdSchool />
-    },
-    {
-        category: "economy",
-        iconComponent: <AiTwotoneBank />
-    },
-    {
-        category: "vacation",
-        iconComponent: <IoIosAirplane />
-    },
-    {
-        category: "shopping",
-        iconComponent: <AiOutlineShoppingCart />
-    }
-
-]
-
 
 export class Create_todo extends Component {
 

@@ -16,8 +16,6 @@ const getTodo = (req, res) => {
         // RETURN SINGLE OBJ IF MATCH ELSE NO MATCH
         if (jTodo) { return res.send({ data: jTodo }) };
         return res.status(400).send({ msg: "NO MATCH" });
-
-
     });
 
 }

@@ -177,7 +177,7 @@ export class Create_todo extends Component {
                     </div>
                     <hr />
                     <div className="create_todo_btn_container">
-                        <button className="button" onClick={(e) => { this.handleSubmitForm(e) }}>CREATE</button>
+                        <button className="button" onClick={(e) => { this.handleSubmitForm(e) }}>UPDATE</button>
                         <Link to="/" className="create_todo_cancel_btn button">CANCEL</Link>
                     </div>
                 </form>

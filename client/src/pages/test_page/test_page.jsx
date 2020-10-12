@@ -2,7 +2,17 @@ import React, { Component } from 'react'
 
 import call_api from "../../functions/call_api.js";
 
+import SPINNER from "../../components/spinner/spinner";
+
 export class Test_page extends Component {
+
+
+    constructor() {
+        super();
+        this.state = {
+            isLoading: true
+        }
+    }
 
 
     componentDidMount() {
@@ -59,6 +69,10 @@ export class Test_page extends Component {
                 <button onClick={() => { this.handlePostTodo() }}>POST TODO</button>
                 <button onClick={() => { this.handlePatchTodo() }}>PATCH / UPDATE TODO</button>
                 <button onClick={() => { this.handleDeleteTodo() }}>DELETE</button>
+
+                <div>
+                    {this.state.isLoading && <SPINNER />}
+                </div>
             </div>
         )
     }

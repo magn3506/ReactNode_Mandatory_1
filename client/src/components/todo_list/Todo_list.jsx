@@ -39,7 +39,18 @@ export class Todo_list extends Component {
     handeDeleteTodo = (event, targetTodoId) => {
         event.preventDefault();
 
+        this.props.onUpdateTodoListAfterDelete({
+            isLoading: true
+        })
+
+        // HIDE DELETE WARNING
+        this.setState({
+            isDeleteWarningShowing: false,
+            deleteWarningTargetTodoObj: undefined,
+        })
+
         // CALL DELETE API
+
         call_api(`http://localhost:9000/api/todo/${targetTodoId}`, {
             method: "DELETE",
         }).then(response => {
@@ -51,15 +62,12 @@ export class Todo_list extends Component {
 
                         if (response.status === 200) {
                             // UPDATE STATE IN PARENT COMPONENT 
-                            this.props.onUpdateTodoListAfterDelete({
-                                todoes: response.data.todoes
-                            })
-
-                            // HIDE DELETE WARNING
-                            this.setState({
-                                isDeleteWarningShowing: false,
-                                deleteWarningTargetTodoObj: undefined,
-                            })
+                            setTimeout(() => {
+                                this.props.onUpdateTodoListAfterDelete({
+                                    todoes: response.data.todoes,
+                                    isLoading: false
+                                })
+                            }, 500)
                         }
                     })
             }

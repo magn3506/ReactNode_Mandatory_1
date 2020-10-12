@@ -1,74 +1,34 @@
 {
- "todoes": [
-  {
-   "id": "47638688-f7d3-4206-be69-fdc5d4773101",
-   "todo": "maggganus",
-   "icon": "home"
-  },
-  {
-   "id": "156f7e72-91f9-4054-a2f7-b1c37b11a301",
-   "todo": "fag",
-   "icon": "vacation"
-  },
-  {
-   "id": "8e49eea8-ea77-4923-bc00-810d4f296faf",
-   "todo": "esharghfshsfhre ",
-   "icon": "school"
-  },
-  {
-   "id": "2b14e76e-8bfd-4e3e-835a-a8e735d1d44d",
-   "todo": "Jakob2232",
-   "icon": "job"
-  },
-  {
-   "id": "f54cf089-b1f1-44d8-a152-02e048e4ff31",
-   "todo": "THIS IS FROM TEST PAGE",
-   "icon": "job"
-  },
-  {
-   "id": "38740ae5-2bce-47a4-a852-11e0f5c31289",
-   "todo": "THIS IS FROM TEST PAGE",
-   "icon": "job"
-  },
-  {
-   "id": "529e502b-76e4-4cfb-92f1-2cad086fed5d",
-   "todo": "THIS IS FROM TEST PAGE",
-   "icon": "job"
-  },
-  {
-   "id": "613350f9-2a4e-4856-ada8-27f38fddb85d",
-   "todo": "haelafeo123123",
-   "icon": "vacation"
-  },
-  {
-   "id": "b18c5961-62fc-49a5-ba61-602a6f3036fb",
-   "todo": "feaf",
-   "icon": "home"
-  },
-  {
-   "id": "1abac1f5-b46b-479d-be0b-f7718150dbf0",
-   "todo": "awfafw",
-   "icon": "home"
-  },
-  {
-   "id": "9d6a29e5-fc88-44e6-8103-496ed889ac18",
-   "todo": "awf",
-   "icon": "home"
-  },
-  {
-   "id": "c4e415f4-2e81-4f98-80b5-0537992c389f",
-   "todo": "awf",
-   "icon": "job"
-  },
-  {
-   "id": "7cd514be-ac4a-4526-b13e-8eaf1a88c05d",
-   "todo": "ARMEN ALTSÅ",
-   "icon": "home"
-  },
-  {
-   "id": "9d3a3293-d53a-4bf3-9e13-5d8425b63a57",
-   "todo": "HALØJ I SKU SOVS",
-   "icon": "shopping"
-  }
- ]
+    "todoes": [
+        {
+            "id": "19f9567e-2cb8-4b82-9690-61e1ba5d9d40",
+            "todo": "Take out the trash..",
+            "icon": "home"
+        },
+        {
+            "id": "521d1c39-9eaf-4318-8e92-db55c3eedbd8",
+            "todo": "Call in sick",
+            "icon": "job"
+        },
+        {
+            "id": "478551fb-b839-4207-be5b-4a5989dda128",
+            "todo": "Do homework ",
+            "icon": "school"
+        },
+        {
+            "id": "66ecdcbf-970a-4227-8727-3aa6c68b546f",
+            "todo": "Withdraw money for gift",
+            "icon": "economy"
+        },
+        {
+            "id": "59fbc7e9-25a5-4b6b-9583-70d61676c128",
+            "todo": "Pack swimsuit for thailand",
+            "icon": "vacation"
+        },
+        {
+            "id": "afae9f71-2e5f-45c8-81a4-151a64f2f27b",
+            "todo": "Buy apples",
+            "icon": "shopping"
+        }
+    ]
 }

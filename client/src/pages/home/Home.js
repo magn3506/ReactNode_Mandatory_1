@@ -6,9 +6,11 @@ import Layout from "../../components/layout/layout";
 // COMPONENTS
 import TODO_LIST from "../../components/todo_list/Todo_list";
 import CREATE_BUTTON from "../../components/create_btn/Create_btn";
+import SPINNER from "../../components/spinner/spinner";
 
 // CALL_API FUNCITON
 import call_api from "../../functions/call_api";
+
 
 
 export class Home extends Component {
@@ -42,7 +44,7 @@ export class Home extends Component {
 
         const { todoes, isLoading } = this.state;
         const Todo_list = isLoading ?
-            "Loading"
+            <SPINNER />
             :
             <TODO_LIST
                 todoes={todoes}

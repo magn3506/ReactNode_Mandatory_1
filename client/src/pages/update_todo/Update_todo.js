@@ -3,7 +3,7 @@ import LAYOUT from "../../components/layout/layout";
 import { Link } from "react-router-dom";
 
 // FETCH
-import fetchPost from "../../functions/fetchPost";
+import call_api from "../../functions/call_api";
 
 // CSS
 import "../create_todo/Create_todo.css";
@@ -25,24 +25,31 @@ export class Create_todo extends Component {
         }
     }
 
+    // ################################
+    // COMPONENT DID MOUNT
+    // ################################
+
     componentDidMount() {
 
+        // GET ID FROM URL
         const { id } = this.props.match.params;
         const targetID = id;
 
-
-        fetch(`http://localhost:9000/api/todo/${targetID}`)
-            .then(response => response.json())
-            .then(data => {
+        // GET TARGET TODO
+        call_api(`http://localhost:9000/api/todo/${targetID}`)
+            .then(response => {
                 this.setState({
                     todo: {
-                        todo: data.data.todo,
-                        icon: data.data.icon
-                    },
-                    isLoading: false
+                        todo: response.data.todo,
+                        icon: response.data.icon
+                    }
                 })
-            });
+            })
+
     }
+
+    // ################################
+
 
     handleSelectCategory = (event, category) => {
         event.preventDefault();
@@ -100,19 +107,25 @@ export class Create_todo extends Component {
         const { todo, icon } = this.state.todo;
 
         if (todo !== undefined && icon !== undefined) {
-            console.log("CREATE TODO");
             this.setState({
                 isVallid: true
             })
 
-            console.log("UPDATE")
-
+            // GET PARAMETER FROM URL
             const { id } = this.props.match.params;
             const targetID = id;
 
-            fetchPost(`http://localhost:9000/api/todo/${targetID}`, "PATCH", this.state.todo);
-            // REDIRECT
-            this.props.history.push("/")
+            // UPDATE TODO
+            call_api(`http://localhost:9000/api/todo/${targetID}`, {
+                method: "PATCH",
+                body: JSON.stringify(this.state.todo),
+            }).then(response => {
+                console.log(response)
+                if (response.status === 200) {
+                    // REDIRECT
+                    this.props.history.push("/")
+                }
+            })
 
             return;
         } else {

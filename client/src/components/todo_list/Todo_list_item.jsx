@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { FaBusinessTime } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import TODO_LIST_OPTIONS from "./todo_options";
 
@@ -44,10 +43,13 @@ export class Todo_list_item extends Component {
         // MATCH CATEGORY WITH CATEGORY ICON
         const todoListIcon = categoryArr.map((catIcon, index) => {
             if (catIcon.category === icon) {
-                return <div key={index} className={`todo_list_icon`} >
-                    {catIcon.iconComponent}
-                </div >
+                return (
+                    <div key={index} className={`todo_list_icon`} >
+                        {catIcon.iconComponent}
+                    </div >
+                )
             }
+            return "";
         })
 
 

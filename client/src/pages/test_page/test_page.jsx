@@ -6,12 +6,11 @@ export class Test_page extends Component {
 
 
     componentDidMount() {
-        const data = call_api("http://localhost:9000/api/todo");
 
-
-        data.then(data => {
-            console.log(data)
-        })
+        call_api("http://localhost:9000/api/todo")
+            .then(data => {
+                console.log(data)
+            })
 
     }
 

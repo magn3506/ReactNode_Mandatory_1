@@ -15,7 +15,7 @@ const callApi = async (url, settings = {}) => {
     }
 
     const data = await response.json();
-    return data;
+    return { data, status: response.status };
 }
 
 export default callApi;

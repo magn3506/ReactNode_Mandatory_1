@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 import categoryArr from "../../assets/icons/icons_object";
 
 // FETCH
-import fetchPost from "../../functions/fetchPost";
+import call_api from "../../functions/call_api";
 
 // CSS
 import "./Create_todo.css";
+
 
 export class Create_todo extends Component {
 
@@ -75,8 +76,6 @@ export class Create_todo extends Component {
 
     handleSubmitForm = (event) => {
         event.preventDefault();
-        console.log(this.state.todo);
-
         const { todo, icon } = this.state.todo;
 
         if (todo !== undefined && icon !== undefined) {
@@ -85,11 +84,16 @@ export class Create_todo extends Component {
                 isVallid: true
             })
 
-            fetchPost("http://localhost:9000/api/todo", "POST", this.state.todo);
-            // REDIRECT
-            this.props.history.push("/")
+            call_api("http://localhost:9000/api/todo", {
+                method: "POST",
+                body: JSON.stringify(this.state.todo),
+            }).then(response => {
+                if (response.status === 200) {
+                    // REDIRECT
+                    this.props.history.push("/")
+                }
+            });
 
-            return;
         } else {
 
             this.handleValidationError();

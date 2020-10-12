@@ -1,11 +1,6 @@
 {
  "todoes": [
   {
-   "id": "1",
-   "todo": "THIS IS FROM TEST PAGE UPDATED",
-   "icon": "home"
-  },
-  {
    "id": "47638688-f7d3-4206-be69-fdc5d4773101",
    "todo": "maggganus",
    "icon": "home"
@@ -18,7 +13,7 @@
   {
    "id": "8e49eea8-ea77-4923-bc00-810d4f296faf",
    "todo": "esharghfshsfhre ",
-   "icon": "home"
+   "icon": "school"
   },
   {
    "id": "2b14e76e-8bfd-4e3e-835a-a8e735d1d44d",
@@ -39,6 +34,41 @@
    "id": "529e502b-76e4-4cfb-92f1-2cad086fed5d",
    "todo": "THIS IS FROM TEST PAGE",
    "icon": "job"
+  },
+  {
+   "id": "613350f9-2a4e-4856-ada8-27f38fddb85d",
+   "todo": "haelafeo123123",
+   "icon": "vacation"
+  },
+  {
+   "id": "b18c5961-62fc-49a5-ba61-602a6f3036fb",
+   "todo": "feaf",
+   "icon": "home"
+  },
+  {
+   "id": "1abac1f5-b46b-479d-be0b-f7718150dbf0",
+   "todo": "awfafw",
+   "icon": "home"
+  },
+  {
+   "id": "9d6a29e5-fc88-44e6-8103-496ed889ac18",
+   "todo": "awf",
+   "icon": "home"
+  },
+  {
+   "id": "c4e415f4-2e81-4f98-80b5-0537992c389f",
+   "todo": "awf",
+   "icon": "job"
+  },
+  {
+   "id": "7cd514be-ac4a-4526-b13e-8eaf1a88c05d",
+   "todo": "ARMEN ALTSÅ",
+   "icon": "home"
+  },
+  {
+   "id": "9d3a3293-d53a-4bf3-9e13-5d8425b63a57",
+   "todo": "HALØJ I SKU SOVS",
+   "icon": "shopping"
   }
  ]
 }

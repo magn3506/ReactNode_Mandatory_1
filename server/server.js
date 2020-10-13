@@ -1,12 +1,16 @@
 "use strict";
 
 const express = require("express");
+const path = require('path');
 const app = express();
 // const cors = require("cors");
 const PORT = process.env.PORT || 9000;
 
 // REQUIRE ROUTES
 const todo = require("./routes/todo/todo");
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // MIDDLEWARE
 // app.use(cors()); // ALLOW CORS FROM ALL *

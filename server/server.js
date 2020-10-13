@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 9000;
 const todo = require("./routes/todo/todo");
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(path.resolve(__dirname, '..'), 'client/build')));
 
 // MIDDLEWARE
 // app.use(cors()); // ALLOW CORS FROM ALL *
@@ -37,8 +37,10 @@ app.use("/api/todo", todo);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
+
+
 app.get('*', (req, res) => {
-    res.sendFile(path.join('/client/build/index.html'));
+    res.sendFile(path.join(path.resolve(__dirname, '..'), '/client/build/index.html'));
 });
 
 // LISTEN

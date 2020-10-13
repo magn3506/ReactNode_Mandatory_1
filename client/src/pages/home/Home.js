@@ -25,7 +25,7 @@ export class Home extends Component {
 
     componentDidMount() {
 
-        call_api("http://localhost:9000/api/todo")
+        call_api("/api/todo")
             .then(response => {
                 setTimeout(() => {
                     this.setState({

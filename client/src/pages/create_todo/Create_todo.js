@@ -2,47 +2,14 @@ import React, { Component } from 'react';
 import LAYOUT from "../../components/layout/layout";
 import { Link } from "react-router-dom";
 
+// IMPORT ICONS
+import categoryArr from "../../assets/icons/icons_object";
+
 // FETCH
-import fetchPost from "../../functions/fetchPost";
+import call_api from "../../functions/call_api";
 
 // CSS
 import "./Create_todo.css";
-
-// IMPORT ICONS
-import { FaBusinessTime } from "react-icons/fa";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdSchool } from "react-icons/md";
-import { AiTwotoneBank } from "react-icons/ai";
-import { IoIosAirplane } from "react-icons/io";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-
-const categoryArr = [
-    {
-        category: "job",
-        iconComponent: <FaBusinessTime />
-    },
-    {
-        category: "home",
-        iconComponent: <AiOutlineHome />
-    },
-    {
-        category: "school",
-        iconComponent: <MdSchool />
-    },
-    {
-        category: "economy",
-        iconComponent: <AiTwotoneBank />
-    },
-    {
-        category: "vacation",
-        iconComponent: <IoIosAirplane />
-    },
-    {
-        category: "shopping",
-        iconComponent: <AiOutlineShoppingCart />
-    }
-
-]
 
 
 export class Create_todo extends Component {
@@ -109,8 +76,6 @@ export class Create_todo extends Component {
 
     handleSubmitForm = (event) => {
         event.preventDefault();
-        console.log(this.state.todo);
-
         const { todo, icon } = this.state.todo;
 
         if (todo !== undefined && icon !== undefined) {
@@ -119,11 +84,16 @@ export class Create_todo extends Component {
                 isVallid: true
             })
 
-            fetchPost("http://localhost:9000/api/todo", "POST", this.state.todo);
-            // REDIRECT
-            this.props.history.push("/")
+            call_api("http://localhost:9000/api/todo", {
+                method: "POST",
+                body: JSON.stringify(this.state.todo),
+            }).then(response => {
+                if (response.status === 200) {
+                    // REDIRECT
+                    this.props.history.push("/")
+                }
+            });
 
-            return;
         } else {
 
             this.handleValidationError();

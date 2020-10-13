@@ -3,46 +3,13 @@ import LAYOUT from "../../components/layout/layout";
 import { Link } from "react-router-dom";
 
 // FETCH
-import fetchPost from "../../functions/fetchPost";
+import call_api from "../../functions/call_api";
 
 // CSS
 import "../create_todo/Create_todo.css";
 
 // IMPORT ICONS
-import { FaBusinessTime } from "react-icons/fa";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdSchool } from "react-icons/md";
-import { AiTwotoneBank } from "react-icons/ai";
-import { IoIosAirplane } from "react-icons/io";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-
-const categoryArr = [
-    {
-        category: "job",
-        iconComponent: <FaBusinessTime />
-    },
-    {
-        category: "home",
-        iconComponent: <AiOutlineHome />
-    },
-    {
-        category: "school",
-        iconComponent: <MdSchool />
-    },
-    {
-        category: "economy",
-        iconComponent: <AiTwotoneBank />
-    },
-    {
-        category: "vacation",
-        iconComponent: <IoIosAirplane />
-    },
-    {
-        category: "shopping",
-        iconComponent: <AiOutlineShoppingCart />
-    }
-
-]
+import categoryArr from "../../assets/icons/icons_object";
 
 
 export class Create_todo extends Component {
@@ -58,24 +25,31 @@ export class Create_todo extends Component {
         }
     }
 
+    // ################################
+    // COMPONENT DID MOUNT
+    // ################################
+
     componentDidMount() {
 
+        // GET ID FROM URL
         const { id } = this.props.match.params;
         const targetID = id;
 
-
-        fetch(`http://localhost:9000/api/todo/${targetID}`)
-            .then(response => response.json())
-            .then(data => {
+        // GET TARGET TODO
+        call_api(`http://localhost:9000/api/todo/${targetID}`)
+            .then(response => {
                 this.setState({
                     todo: {
-                        todo: data.data.todo,
-                        icon: data.data.icon
-                    },
-                    isLoading: false
+                        todo: response.data.todo,
+                        icon: response.data.icon
+                    }
                 })
-            });
+            })
+
     }
+
+    // ################################
+
 
     handleSelectCategory = (event, category) => {
         event.preventDefault();
@@ -133,19 +107,25 @@ export class Create_todo extends Component {
         const { todo, icon } = this.state.todo;
 
         if (todo !== undefined && icon !== undefined) {
-            console.log("CREATE TODO");
             this.setState({
                 isVallid: true
             })
 
-            console.log("UPDATE")
-
+            // GET PARAMETER FROM URL
             const { id } = this.props.match.params;
             const targetID = id;
 
-            fetchPost(`http://localhost:9000/api/todo/${targetID}`, "PATCH", this.state.todo);
-            // REDIRECT
-            this.props.history.push("/")
+            // UPDATE TODO
+            call_api(`http://localhost:9000/api/todo/${targetID}`, {
+                method: "PATCH",
+                body: JSON.stringify(this.state.todo),
+            }).then(response => {
+                console.log(response)
+                if (response.status === 200) {
+                    // REDIRECT
+                    this.props.history.push("/")
+                }
+            })
 
             return;
         } else {
@@ -197,7 +177,7 @@ export class Create_todo extends Component {
                     </div>
                     <hr />
                     <div className="create_todo_btn_container">
-                        <button className="button" onClick={(e) => { this.handleSubmitForm(e) }}>CREATE</button>
+                        <button className="button" onClick={(e) => { this.handleSubmitForm(e) }}>UPDATE</button>
                         <Link to="/" className="create_todo_cancel_btn button">CANCEL</Link>
                     </div>
                 </form>

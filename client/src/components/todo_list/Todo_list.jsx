@@ -6,6 +6,10 @@ import DELETE_WARNING from "./Delete_warning.jsx";
 // CSS
 import "./Todo_list.css";
 
+// CALL_API FUNCITON
+import call_api from "../../functions/call_api";
+
+
 export class Todo_list extends Component {
 
     constructor() {
@@ -34,31 +38,64 @@ export class Todo_list extends Component {
 
     handeDeleteTodo = (event, targetTodoId) => {
         event.preventDefault();
-        console.log("DELETE FROM DB WITH ID:" + targetTodoId);
 
-        fetch(`http://localhost:9000/api/todo/${targetTodoId}`, {
+        this.props.onUpdateTodoListAfterDelete({
+            isLoading: true
+        })
+
+        // HIDE DELETE WARNING
+        this.setState({
+            isDeleteWarningShowing: false,
+            deleteWarningTargetTodoObj: undefined,
+        })
+
+        // CALL DELETE API
+
+        call_api(`http://localhost:9000/api/todo/${targetTodoId}`, {
             method: "DELETE",
-        }).then(function (response) {
-            return response.json();
-        }).then(function (data) {
-            console.log(data);
+        }).then(response => {
 
+            if (response.status === 200) {
+                // AFTER DELETE GET NEW LIST AND UPDATE STATE
+                call_api("http://localhost:9000/api/todo")
+                    .then(response => {
 
-        });
-
-        // REDIRECT
-
-
-
-
-
+                        if (response.status === 200) {
+                            // UPDATE STATE IN PARENT COMPONENT 
+                            setTimeout(() => {
+                                this.props.onUpdateTodoListAfterDelete({
+                                    todoes: response.data.todoes,
+                                    isLoading: false
+                                })
+                            }, 500)
+                        }
+                    })
+            }
+        })
     }
 
     render() {
 
+        // PROPS
         const { todoes } = this.props;
 
-        const todo_list_items = todoes.map(todo => <TODO_LIST_ITEM key={todo.id} todo={todo} onDeleteWarningShow={this.handleDeleteWarningShow} />)
+        // STATE
+        const { isDeleteWarningShowing, deleteWarningTargetTodoObj } = this.state;
+
+        const todo_list_items = todoes.map(todo =>
+            <TODO_LIST_ITEM
+                key={todo.id}
+                todo={todo}
+                onDeleteWarningShow={this.handleDeleteWarningShow}
+            />)
+
+        const delete_warning = isDeleteWarningShowing
+            &&
+            <DELETE_WARNING
+                onCancelDeleteWarning={this.handleCancelDeleteWarning}
+                onDeleteTodo={this.handeDeleteTodo}
+                todo={deleteWarningTargetTodoObj}
+            />
 
         return (
             <>
@@ -70,7 +107,7 @@ export class Todo_list extends Component {
                     {todo_list_items}
                 </ul>
                 <div className="todo_list_spacer"></div>
-                {this.state.isDeleteWarningShowing && <DELETE_WARNING onCancelDeleteWarning={this.handleCancelDeleteWarning} onDeleteTodo={this.handeDeleteTodo} todo={this.state.deleteWarningTargetTodoObj} />}
+                {delete_warning}
             </>
         )
     }

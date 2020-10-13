@@ -10,9 +10,33 @@ import Logo from "../../assets/images/TodHooLogo.svg";
 // STYLE
 import "./layout.css";
 
+// COMPONENTS
+import NAV_LIST from "./navList";
+
 
 export class Layout extends Component {
+
+
+    constructor() {
+        super();
+        this.state = {
+            isOpen: false
+        }
+    }
+
+    handleToggleIsNavOpen = () => {
+        console.log("toggle nav")
+        console.log(!this.state.isOpen)
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
+
     render() {
+
+
+        const nav_list = (this.props.nav && this.state.isOpen) ? <NAV_LIST onToggleIsNavOpen={this.handleToggleIsNavOpen} /> : ""
+
         return (
             <div className="site">
                 <div className="app_continer center_middle">
@@ -24,15 +48,13 @@ export class Layout extends Component {
                             this.props.title && <div className="site_title">{this.props.title}</div>
                         }
                         {this.props.nav && <nav className="nav">
-                            <CgMenuRight className="nav_btn" />
+                            <CgMenuRight onClick={() => this.handleToggleIsNavOpen()} className="nav_btn" />
                         </nav>}
+                        {nav_list}
                     </header>
                     <main className="main">
                         {this.props.children}
                     </main>
-                    {/* <footer>
-                    This is a footer
-                </footer> */}
                 </div>
             </div>
         )

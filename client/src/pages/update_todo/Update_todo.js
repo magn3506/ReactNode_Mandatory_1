@@ -36,7 +36,7 @@ export class Create_todo extends Component {
         const targetID = id;
 
         // GET TARGET TODO
-        call_api(`http://localhost:9000/api/todo/${targetID}`)
+        call_api(`/api/todo/${targetID}`)
             .then(response => {
                 this.setState({
                     todo: {
@@ -116,7 +116,7 @@ export class Create_todo extends Component {
             const targetID = id;
 
             // UPDATE TODO
-            call_api(`http://localhost:9000/api/todo/${targetID}`, {
+            call_api(`/api/todo/${targetID}`, {
                 method: "PATCH",
                 body: JSON.stringify(this.state.todo),
             }).then(response => {

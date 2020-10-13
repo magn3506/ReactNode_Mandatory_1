@@ -84,7 +84,7 @@ export class Create_todo extends Component {
                 isVallid: true
             })
 
-            call_api("http://localhost:9000/api/todo", {
+            call_api("/api/todo", {
                 method: "POST",
                 body: JSON.stringify(this.state.todo),
             }).then(response => {

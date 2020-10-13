@@ -51,13 +51,13 @@ export class Todo_list extends Component {
 
         // CALL DELETE API
 
-        call_api(`http://localhost:9000/api/todo/${targetTodoId}`, {
+        call_api(`/api/todo/${targetTodoId}`, {
             method: "DELETE",
         }).then(response => {
 
             if (response.status === 200) {
                 // AFTER DELETE GET NEW LIST AND UPDATE STATE
-                call_api("http://localhost:9000/api/todo")
+                call_api("/api/todo")
                     .then(response => {
 
                         if (response.status === 200) {

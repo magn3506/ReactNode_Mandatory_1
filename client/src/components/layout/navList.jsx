@@ -10,7 +10,7 @@ export class NavList extends Component {
         return (
             <div className="nav_list_container">
                 <ul className="nav_list">
-                    <li className="nav_list_item"><Link to="/home" onClick={() => { this.props.onToggleIsNavOpen() }}>Home</Link></li>
+                    <li className="nav_list_item"><Link to="/" onClick={() => { this.props.onToggleIsNavOpen() }}>Home</Link></li>
                     <li className="nav_list_item"><Link to="/about">About</Link></li>
                     <li className="nav_list_item"><Link to="/testPage">Test Page</Link></li>
                     <li className="close"><VscClose className="close_icon" onClick={() => { this.props.onToggleIsNavOpen() }} /></li>
